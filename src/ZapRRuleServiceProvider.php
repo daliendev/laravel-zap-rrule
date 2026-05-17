@@ -16,9 +16,12 @@ class ZapRRuleServiceProvider extends ServiceProvider
         if (config('zap.models.schedule', BaseSchedule::class) === BaseSchedule::class) {
             config(['zap.models.schedule' => Schedule::class]);
         }
+    }
 
-        // Rebind so Zap::for() returns our fluent builder (with rrule()).
-        // ZapServiceProvider registers first (alphabetically earlier), our rebind wins.
+    public function boot(): void
+    {
+        // Rebind AFTER all providers have registered so we always win,
+        // regardless of alphabetical ordering between vendor names.
         $this->app->singleton('zap', ScheduleService::class);
         $this->app->singleton(BaseScheduleService::class, ScheduleService::class);
     }
