@@ -1,0 +1,43 @@
+{
+    "name": "daliendev/laravel-zap-rrule",
+    "description": "RRule (RFC 5545) add-on for the laravel-zap scheduling package",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "scheduling", "rrule", "recurrence", "rfc5545", "laravel-zap"],
+    "require": {
+        "php": ">=8.2",
+        "laraveljutsu/zap": "^1.0",
+        "rlanvin/php-rrule": "^2.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZapRRule\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZapRRule\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ZapRRule\\ZapRRuleServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
