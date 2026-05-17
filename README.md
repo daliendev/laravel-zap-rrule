@@ -9,7 +9,6 @@
 ```bash
 composer require laraveljutsu/zap
 composer require daliendev/laravel-zap-rrule
-composer require your-vendor/laravel-zap-rrule
 ```
 
 No config changes needed. The service provider auto-discovers and wires everything.
@@ -76,7 +75,7 @@ use ZapRRule\Models\Schedule as RRuleSchedule;
 
 class Schedule extends RRuleSchedule
 {
-    // your customisations
+    // your customizations
 }
 ```
 
